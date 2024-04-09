@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rediger Sprog</title>
+    <!-- Side-titel, der vises i browserens fane -->
+</head>
+<body>
+
+<h1>Rediger programmeringssprog</h1>
+<!-- Overskrift for siden -->
+
+<!-- Formular for redigering af sprogdata. Thymeleaf bruges til at binde formularfeltet til det eksisterende sprogobjekt. -->
+<form action="#" th:action="@{/language/save}" th:object="${language}" method="post">
+    <!-- Skjult felt for sprog-ID, som ikke behøver at blive ændret af brugeren -->
+    <input type="hidden" th:field="*{id}" />
+
+    <!-- Inputfelt for navnet på programmeringssproget -->
+    <label for="name">Navn:</label>
+    <input type="text" id="name" th:field="*{name}" />
+
+    <!-- Inputfelt for udgivelsesåret for programmeringssproget -->
+    <label for="releaseYear">Udgivelsesår:</label>
+    <input type="number" id="releaseYear" th:field="*{releaseYear}" />
+
+    <!-- Inputfelt for skaberen af programmeringssproget -->
+    <label for="creator">Skaber:</label>
+    <input type="text" id="creator" th:field="*{creator}" />
+
+    <!-- Inputfelt for paradigmet af programmeringssproget -->
+    <label for="paradigm">Paradigme:</label>
+    <input type="text" id="paradigm" th:field="*{paradigm}" />
+
+    <!-- Submit-knap for at gemme de redigerede oplysninger -->
+    <button type="submit">Opdater</button>
+</form>
+
+<!-- Link til at vende tilbage til listen over programmeringssprog -->
+<a href="/">Tilbage til listen</a>
+
+</body>
+</html>

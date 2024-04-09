@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tilføj Sprog</title>
+    <!-- Side-titel, der vises i browserens fane -->
+</head>
+<body>
+
+<h1>Tilføj et nyt programmeringssprog</h1>
+<!-- Overskrift for siden -->
+
+<!-- Formular til tilføjelse af et nyt programmeringssprog. Thymeleaf bruges til at håndtere dataoverførslen mellem server og klient. -->
+<form action="#" th:action="@{/language/save}" th:object="${language}" method="post">
+    <!-- Inputfelt for navnet på det nye programmeringssprog -->
+    <label for="name">Navn:</label>
+    <input type="text" id="name" th:field="*{name}" />
+
+    <!-- Inputfelt for udgivelsesåret for det nye programmeringssprog -->
+    <label for="releaseYear">Udgivelsesår:</label>
+    <input type="number" id="releaseYear" th:field="*{releaseYear}" />
+
+    <!-- Inputfelt for skaberen af det nye programmeringssprog -->
+    <label for="creator">Skaber:</label>
+    <input type="text" id="creator" th:field="*{creator}" />
+
+    <!-- Inputfelt for paradigmet for det nye programmeringssprog -->
+    <label for="paradigm">Paradigme:</label>
+    <input type="text" id="paradigm" th:field="*{paradigm}" />
+
+    <!-- Submit-knap for at sende formular data til serveren for behandling og tilføjelse af det nye sprog til databasen -->
+    <button type="submit">Gem</button>
+</form>
+
+<!-- Link til at vende tilbage til listen over programmeringssprog -->
+<a href="/">Tilbage til listen</a>
+
+</body>
+</html>
